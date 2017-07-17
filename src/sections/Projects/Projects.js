@@ -1,12 +1,11 @@
 import React, { Component } from "react";
-import logo from "../logo.svg";
-import "../App.css";
+import "./Projects.css";
 
-class Intro extends Component {
+class Projects extends Component {
   render() {
     return (
-      <div className="intro">
-        Intro
+      <div className="projects">
+        Projects
         {/* <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to the Intro Page</h2>
@@ -19,4 +18,4 @@ class Intro extends Component {
   }
 }
 
-export default Intro;
+export default Projects;
