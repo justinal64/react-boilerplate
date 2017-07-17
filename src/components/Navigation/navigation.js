@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Menu } from "antd";
-
+import "./navigation.css";
 class Navigation extends React.Component {
   state = {
     current: "mail"
@@ -14,21 +14,22 @@ class Navigation extends React.Component {
   render() {
     return (
       <Menu
+        className="nav"
         onClick={this.handleClick}
         selectedKeys={[this.state.current]}
         mode="horizontal"
       >
-        <Menu.Item key="alipay2">
+        <Menu.Item key="0">
           <a href="#" rel="noopener noreferrer">
             Intro
           </a>
         </Menu.Item>
-        <Menu.Item key="alipay">
+        <Menu.Item key="1">
           <a href="#projects" rel="noopener noreferrer">
             Projects
           </a>
         </Menu.Item>
-        <Menu.Item key="alipay1">
+        <Menu.Item key="2">
           <a href="#contact" rel="noopener noreferrer">
             Contact
           </a>
