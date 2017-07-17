@@ -4,7 +4,7 @@ import "./Projects.css";
 class Projects extends Component {
   render() {
     return (
-      <div className="projects">
+      <div className="projects" id="projects">
         Projects
         {/* <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
