@@ -5,7 +5,7 @@ class Intro extends Component {
   render() {
     return (
       <div className="intro">
-        Intro
+        <p>Intro</p>
         {/* <div className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to the Intro Page</h2>

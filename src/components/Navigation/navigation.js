@@ -1,6 +1,7 @@
-import React, { Component } from "react";
-import { Menu } from "antd";
+import React from "react";
+import { Row, Col } from "antd";
 import "./navigation.css";
+
 class Navigation extends React.Component {
   state = {
     current: "mail"
@@ -13,31 +14,32 @@ class Navigation extends React.Component {
   };
   render() {
     return (
-      <Menu
-        className="nav"
-        onClick={this.handleClick}
-        selectedKeys={[this.state.current]}
-        mode="horizontal"
-      >
-        <Menu.Item key="0">
-          <a href="#" rel="noopener noreferrer">
-            Intro
-          </a>
-        </Menu.Item>
-        <Menu.Item key="1">
-          <a href="#projects" rel="noopener noreferrer">
-            Projects
-          </a>
-        </Menu.Item>
-        <Menu.Item key="2">
-          <a href="#contact" rel="noopener noreferrer">
-            Contact
-          </a>
-        </Menu.Item>
-      </Menu>
+      <div className="nav">
+        {/* <Row type="flex" align="middle">
+          <Col span={1} offset={9}>
+            <a href="#intro">Intro</a>
+          </Col>
+          <Col span={1} offset={1}>
+            <a href="#projects">Projects</a>
+          </Col>
+          <Col span={1} offset={1}>
+            <a href="#contact">Contact</a>
+          </Col>
+        </Row> */}
+        <Row>
+          <Col xs={8} sm={8} md={8} lg={8} xl={10}>
+            <a href="#intro">Intro</a>
+          </Col>
+          <Col xs={8} sm={8} md={8} lg={8} xl={4}>
+            <a href="#projects">Projects</a>
+          </Col>
+          <Col xs={8} sm={8} md={8} lg={8} xl={10}>
+            <a href="#contact">Contact</a>
+          </Col>
+        </Row>
+      </div>
     );
   }
 }
 
-// ReactDOM.render(<App />, mountNode);
 export default Navigation;
