@@ -1,5 +1,25 @@
-.nav {
+/* https://stackoverflow.com/questions/8508275/how-to-center-a-position-absolute-element */
+
+
+/* .nav {
     position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: transparent;
+    font-size: 2rem;
+} */
+
+.nav {
+    position: sticky;
+    font-size: 2rem;
     top: 0;
-    left: 0;
+    background-color: transparent;
+}
+
+.ant-row:after {
+    clear: none;
+    visibility: hidden;
+    font-size: 0;
+    height: 0;
 }
