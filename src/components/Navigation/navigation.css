@@ -11,5 +11,15 @@
 } */
 
 .nav {
+    position: sticky;
     font-size: 2rem;
+    top: 0;
+    background-color: transparent;
+}
+
+.ant-row:after {
+    clear: none;
+    visibility: hidden;
+    font-size: 0;
+    height: 0;
 }
