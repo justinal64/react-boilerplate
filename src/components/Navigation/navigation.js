@@ -1,45 +1,64 @@
 import React from "react";
-import { Row, Col } from "antd";
-import "./navigation.css";
+import {
+  Nav,
+  NavItem,
+  NavDropdown,
+  DropdownItem,
+  DropdownToggle,
+  DropdownMenu,
+  NavLink
+} from "reactstrap";
 
-class Navigation extends React.Component {
-  state = {
-    current: "mail"
-  };
-  handleClick = e => {
-    console.log("click ", e);
+export default class Example extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.toggle = this.toggle.bind(this);
+    this.state = {
+      dropdownOpen: false
+    };
+  }
+
+  toggle() {
     this.setState({
-      current: e.key
+      dropdownOpen: !this.state.dropdownOpen
     });
-  };
+  }
+
   render() {
     return (
-      <div className="nav">
-        {/* <Row type="flex" align="middle">
-          <Col span={1} offset={9}>
-            <a href="#intro">Intro</a>
-          </Col>
-          <Col span={1} offset={1}>
-            <a href="#projects">Projects</a>
-          </Col>
-          <Col span={1} offset={1}>
-            <a href="#contact">Contact</a>
-          </Col>
-        </Row> */}
-        <Row>
-          <Col xs={8} sm={8} md={8} lg={8} xl={10}>
-            <a href="#intro">Intro</a>
-          </Col>
-          <Col xs={8} sm={8} md={8} lg={8} xl={4}>
-            <a href="#projects">Projects</a>
-          </Col>
-          <Col xs={8} sm={8} md={8} lg={8} xl={10}>
-            <a href="#contact">Contact</a>
-          </Col>
-        </Row>
+      <div>
+        <Nav tabs>
+          <NavItem>
+            <NavLink href="#" active>
+              Link
+            </NavLink>
+          </NavItem>
+          <NavDropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
+            <DropdownToggle nav caret>
+              Dropdown
+            </DropdownToggle>
+            <DropdownMenu>
+              <DropdownItem header>Header</DropdownItem>
+              <DropdownItem disabled>Action</DropdownItem>
+              <DropdownItem>Another Action</DropdownItem>
+              <DropdownItem divider />
+              <DropdownItem>Another Action</DropdownItem>
+            </DropdownMenu>
+          </NavDropdown>
+          <NavItem>
+            <NavLink href="#">Link</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink href="#">Another Link</NavLink>
+          </NavItem>
+          <NavItem>
+            <NavLink disabled href="#">
+              Disabled Link
+            </NavLink>
+          </NavItem>
+        </Nav>
       </div>
     );
   }
 }
-
-export default Navigation;
